@@ -11,8 +11,8 @@ namespace SharpLab01
         private DateTime _birthday;
         public bool Valid { get; private set; }
         public string Age { get; private set; }
-        public string WestZodiak { get; private set; }
-        public string ChinaZodiak { get; private set; }
+        public string WestZodiac { get; private set; }
+        public string ChinaZodiac { get; private set; }
 
         public BirthdayModel()
         {
@@ -26,18 +26,29 @@ namespace SharpLab01
             {
                 _birthday = value;
                 var today = DateTime.Today;
-                var age = today.Year - value.Year;
-                Valid = (today - value).Days >= 0 && age <= 135;
+                var dyears = today.Year - value.Year;
+                var deltaDateTime = today - value;
+                
+                Valid = deltaDateTime.Days >= 0 && dyears <= 135;
                 if (Valid)
                 {
-                    Age = age > 1? "2" : "0";
-                    WestZodiak = "Some west2";
-                    ChinaZodiak = "Some china3";
+                    Age = dyears > 0? dyears+" year(s)" : deltaDateTime.Days+ " day(s)";
+                    WestZodiac = "Some west2";
+                    ChinaZodiac = "Some china3";
                 }
                 else
                 {
-                    Age = WestZodiak = ChinaZodiak = "";
+                    Age = WestZodiac = ChinaZodiac = "";
                 }
+            }
+        }
+
+        public bool IsBirthday
+        {
+            get
+            {
+                var today = DateTime.Today;
+                return today.Month == _birthday.Month && today.Day == _birthday.Day;
             }
         }
 

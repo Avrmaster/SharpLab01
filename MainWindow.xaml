@@ -40,13 +40,6 @@
                         SelectedDateChanged="OnCalendarChange">
                     </DatePicker>
                 </Viewbox>
-                <Viewbox Grid.Row ="2" Grid.Column="0" 
-                         HorizontalAlignment="Center" VerticalAlignment="Center" >
-                    <Calendar
-                        x:Name="MainCalendar" FirstDayOfWeek="Monday"
-                        SelectedDatesChanged="OnCalendarChange">
-                    </Calendar>
-                </Viewbox>
             </Grid>
         </Grid>
         <Grid Grid.Row="0" Grid.Column="1" Margin="20">
@@ -60,15 +53,15 @@
                        TextAlignment="Center" FontSize="16" Margin="10">
                 Your age:
             </TextBlock>
-            <TextBlock Grid.Row ="1" Grid.Column="0" Name="TextBlockWestZodiak" Foreground="AliceBlue" 
+            <TextBlock Grid.Row ="1" Grid.Column="0" Name="TextBlockWestZodiac" Foreground="AliceBlue" 
                        TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
                        TextAlignment="Center" FontSize="16" Margin="10">
-                Western zodiak:
+                Western zodiac:
             </TextBlock>
-            <TextBlock Grid.Row ="2" Grid.Column="0" Name="TextBlockChinaZodiak" Foreground="AliceBlue"
+            <TextBlock Grid.Row ="2" Grid.Column="0" Name="TextBlockChinaZodiac" Foreground="AliceBlue"
                        TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
                        TextAlignment="Center" FontSize="16" Margin="10">
-                China zodiak:
+                China zodiac:
             </TextBlock>
         </Grid>
     </Grid>

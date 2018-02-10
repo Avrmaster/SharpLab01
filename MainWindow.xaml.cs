@@ -27,27 +27,26 @@ namespace SharpLab01
         {
             _birthdayModel = new BirthdayModel();
             InitializeComponent();
-            MainCalendar.SelectedDate = _birthdayModel.Birthday; //to trigger OnCalendarChange
         }
 
         private void OnCalendarChange(object sender, SelectionChangedEventArgs e)
         {
-            if (Equals(sender, MainCalendar))
-            {
-                _birthdayModel.Birthday = MainCalendar.SelectedDate ?? DateTime.Now;
-            }
-            else
-            {
-                _birthdayModel.Birthday = MainPicker.SelectedDate ?? DateTime.Now;
-            }
-           
+            
+            _birthdayModel.Birthday = MainPicker.SelectedDate ?? DateTime.Now;
             
             TextBlockAge.Text = "Your age:\n"+_birthdayModel.Age;
-            TextBlockWestZodiak.Text = "Western zodiak:\n" + _birthdayModel.WestZodiak;
-            TextBlockChinaZodiak.Text = "China zodiak:\n" + _birthdayModel.ChinaZodiak;
+            TextBlockWestZodiac.Text = "Western zodiac:\n" + _birthdayModel.WestZodiac;
+            TextBlockChinaZodiac.Text = "China zodiac:\n" + _birthdayModel.ChinaZodiac;
             if (!_birthdayModel.Valid)
             {
                 MessageBox.Show("You entered invalid date!", "DatePickerError", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+            }
+            else
+            {
+                if (_birthdayModel.IsBirthday)
+                {
+                    MessageBox.Show("Happy birthday, bro/sister!!! <3");
+                }
             }
         }
     }
