@@ -12,7 +12,7 @@ namespace SharpLab01
         public bool Valid { get; private set; }
         public string Age { get; private set; }
         public string WestZodiac { get; private set; }
-        public string ChinaZodiac { get; private set; }
+        public string ChineseZodiac { get; private set; }
 
         public BirthdayModel()
         {
@@ -26,7 +26,7 @@ namespace SharpLab01
             {
                 _birthday = value;
                 var today = DateTime.Today;
-                var dyears = today.Year - value.Year;
+                var dyears = (today.Year - value.Year) - (today.DayOfYear >= _birthday.DayOfYear? 0 : 1);
                 var deltaDateTime = today - value;
                 
                 Valid = deltaDateTime.Days >= 0 && dyears <= 135;
@@ -34,11 +34,11 @@ namespace SharpLab01
                 {
                     Age = dyears > 0? dyears+" year(s)" : deltaDateTime.Days+ " day(s)";
                     WestZodiac = "Some west2";
-                    ChinaZodiac = "Some china3";
+                    ChineseZodiac = ChineseZodiaсs[(_birthday.Year + 8) % 12];
                 }
                 else
                 {
-                    Age = WestZodiac = ChinaZodiac = "";
+                    Age = WestZodiac = ChineseZodiac = "";
                 }
             }
         }
@@ -52,5 +52,19 @@ namespace SharpLab01
             }
         }
 
+        private static readonly string[] ChineseZodiaсs = {
+            "Rat",
+            "Ox",
+            "Tiger",
+            "Rabbit",
+            "Dragon",
+            "Snake",
+            "Horse",
+            "Goat",
+            "Monkey",
+            "Rooster",
+            "Dog",
+            "Pig"
+        };
     }
 }

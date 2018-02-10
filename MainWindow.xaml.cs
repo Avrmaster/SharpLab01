@@ -36,7 +36,7 @@ namespace SharpLab01
             
             TextBlockAge.Text = "Your age:\n"+_birthdayModel.Age;
             TextBlockWestZodiac.Text = "Western zodiac:\n" + _birthdayModel.WestZodiac;
-            TextBlockChinaZodiac.Text = "China zodiac:\n" + _birthdayModel.ChinaZodiac;
+            TextBlockChiniseZodiac.Text = "Chinise zodiac:\n" + _birthdayModel.ChineseZodiac;
             if (!_birthdayModel.Valid)
             {
                 MessageBox.Show("You entered invalid date!", "DatePickerError", MessageBoxButton.OK, MessageBoxImage.Asterisk);

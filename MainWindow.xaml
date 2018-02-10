@@ -58,10 +58,10 @@
                        TextAlignment="Center" FontSize="16" Margin="10">
                 Western zodiac:
             </TextBlock>
-            <TextBlock Grid.Row ="2" Grid.Column="0" Name="TextBlockChinaZodiac" Foreground="AliceBlue"
+            <TextBlock Grid.Row ="2" Grid.Column="0" Name="TextBlockChiniseZodiac" Foreground="AliceBlue"
                        TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
                        TextAlignment="Center" FontSize="16" Margin="10">
-                China zodiac:
+                Chinise zodiac:
             </TextBlock>
         </Grid>
     </Grid>
