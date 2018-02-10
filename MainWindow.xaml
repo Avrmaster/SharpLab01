@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SharpLab01"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="480" Width="680">
 
     <Grid>
         <Grid.Background>
@@ -23,8 +23,9 @@
         <Grid Grid.Row="0" Grid.Column="0" Margin="20">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="15*"/>
-                    <RowDefinition Height="70*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="40*"/>
                     <RowDefinition Height="15*"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" FontSize="16" FontStyle="Italic" Margin="10,5,0,0"
@@ -32,10 +33,20 @@
                        HorizontalAlignment="Center">
                     Please, pick your birthday
                 </Label>
-                <Calendar Grid.Row ="1" Grid.Column="0" x:Name="MainCalendar" FirstDayOfWeek="Monday"
-                          HorizontalAlignment="Center" VerticalAlignment="Center" 
-                          SelectedDatesChanged="OnCalendarChange" Margin="0,0.2,2,25.2" Grid.RowSpan="2">
-                </Calendar>
+                <Viewbox Grid.Row ="1" Grid.Column="0" 
+                         HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <DatePicker 
+                        x:Name="MainPicker" FirstDayOfWeek="Monday"
+                        SelectedDateChanged="OnCalendarChange">
+                    </DatePicker>
+                </Viewbox>
+                <Viewbox Grid.Row ="2" Grid.Column="0" 
+                         HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Calendar
+                        x:Name="MainCalendar" FirstDayOfWeek="Monday"
+                        SelectedDatesChanged="OnCalendarChange">
+                    </Calendar>
+                </Viewbox>
             </Grid>
         </Grid>
         <Grid Grid.Row="0" Grid.Column="1" Margin="20">

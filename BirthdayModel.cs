@@ -10,7 +10,7 @@ namespace SharpLab01
     {
         private DateTime _birthday;
         public bool Valid { get; private set; }
-        public int Age { get; private set; }
+        public string Age { get; private set; }
         public string WestZodiak { get; private set; }
         public string ChinaZodiak { get; private set; }
 
@@ -26,10 +26,18 @@ namespace SharpLab01
             {
                 _birthday = value;
                 var today = DateTime.Today;
-                Valid = (today - value).Days >= 0 && (today.Year - value.Year) <= 135;
-                Age = 2;
-                WestZodiak = "Some west";
-                ChinaZodiak = "Some china";
+                var age = today.Year - value.Year;
+                Valid = (today - value).Days >= 0 && age <= 135;
+                if (Valid)
+                {
+                    Age = age > 1? "2" : "0";
+                    WestZodiak = "Some west2";
+                    ChinaZodiak = "Some china3";
+                }
+                else
+                {
+                    Age = WestZodiak = ChinaZodiak = "";
+                }
             }
         }
 
