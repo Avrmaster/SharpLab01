@@ -6,7 +6,59 @@
         xmlns:local="clr-namespace:SharpLab01"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#6FB98F" Offset="0.0" />
+                <GradientStop Color="#004445" Offset="0.25" />
+                <GradientStop Color="#2C7873" Offset="0.75" />
+                <GradientStop Color="#021c1E" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15*"/>
+                    <RowDefinition Height="70*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" FontSize="16" FontStyle="Italic" Margin="10,5,0,0"
+                       Foreground="AliceBlue"
+                       HorizontalAlignment="Center">
+                    Please, pick your birthday
+                </Label>
+                <Calendar Grid.Row ="1" Grid.Column="0" x:Name="MainCalendar" FirstDayOfWeek="Monday"
+                          HorizontalAlignment="Center" VerticalAlignment="Center" 
+                          SelectedDatesChanged="OnCalendarChange" Margin="0,0.2,2,25.2" Grid.RowSpan="2">
+                </Calendar>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="33*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row ="0" Grid.Column="0" Name="TextBlockAge" Foreground="AliceBlue"
+                       TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
+                       TextAlignment="Center" FontSize="16" Margin="10">
+                Your age:
+            </TextBlock>
+            <TextBlock Grid.Row ="1" Grid.Column="0" Name="TextBlockWestZodiak" Foreground="AliceBlue" 
+                       TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
+                       TextAlignment="Center" FontSize="16" Margin="10">
+                Western zodiak:
+            </TextBlock>
+            <TextBlock Grid.Row ="2" Grid.Column="0" Name="TextBlockChinaZodiak" Foreground="AliceBlue"
+                       TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
+                       TextAlignment="Center" FontSize="16" Margin="10">
+                China zodiak:
+            </TextBlock>
+        </Grid>
     </Grid>
 </Window>

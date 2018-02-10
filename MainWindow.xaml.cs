@@ -17,12 +17,22 @@ namespace SharpLab01
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
+    /// Listens events from MainWindow Calendar and appropriately changes fields shown to users
     /// </summary>
     public partial class MainWindow : Window
     {
+        private BirthdayModel _birthdayModel;
+
         public MainWindow()
         {
+            _birthdayModel = new BirthdayModel();
             InitializeComponent();
+        }
+
+        private void OnCalendarChange(object sender, SelectionChangedEventArgs e)
+        {
+            _birthdayModel.Birthday = MainCalendar.SelectedDate ?? DateTime.Now;
+            TextBlockAge.Text = _birthdayModel.Valid.ToString();
         }
     }
 }
