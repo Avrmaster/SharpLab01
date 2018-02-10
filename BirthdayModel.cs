@@ -46,35 +46,35 @@ namespace SharpLab01
                         case 2: //February
                             westZodiacNum = day <= 19 ? 10 : 11;
                             break;
-                        case 3:
-                            westZodiacNum = day <= 20 ? 11 : 10;
+                        case 3: //March
+                            westZodiacNum = day <= 20 ? 11 : 0;
                             break;
-                        case 4:
-                            westZodiacNum = day <= 21 ? 0 : 11;
+                        case 4: //April
+                            westZodiacNum = day <= 20 ? 0 : 1;
                             break;
-                        case 5:
-                            westZodiacNum = day <= 21 ? 1 : 0;
+                        case 5: //May
+                            westZodiacNum = day <= 20 ? 1 : 2;
                             break;
-                        case 6:
-                            westZodiacNum = day <= 21 ? 2 : 1;
+                        case 6: //June
+                            westZodiacNum = day <= 20 ? 2 : 3;
                             break;
-                        case 7:
-                            westZodiacNum = day <= 22 ? 3 : 2;
+                        case 7: //Jule
+                            westZodiacNum = day <= 21 ? 3 : 4;
                             break;
-                        case 8:
-                            westZodiacNum = day <= 23 ? 4 : 3;
+                        case 8: //August
+                            westZodiacNum = day <= 22 ? 4 : 5;
                             break;
-                        case 9:
-                            westZodiacNum = day <= 22 ? 5 : 4;
+                        case 9: //September
+                            westZodiacNum = day <= 21 ? 5 : 6;
                             break;
-                        case 10:
-                            westZodiacNum = day <= 22 ? 6 : 5;
+                        case 10: //October
+                            westZodiacNum = day <= 21 ? 6 : 7;
                             break;
-                        case 11:
-                            westZodiacNum = day <= 22 ? 7 : 6;
+                        case 11: //November
+                            westZodiacNum = day <= 21 ? 7 : 8;
                             break;
-                        case 12:
-                            westZodiacNum = day <= 22 ? 8 : 7;
+                        case 12: //December
+                            westZodiacNum = day <= 21 ? 8 : 9;
                             break;
                         default:
                             westZodiacNum = 0;
