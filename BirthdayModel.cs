@@ -10,6 +10,14 @@ namespace SharpLab01
     {
         private DateTime _birthday;
         public bool Valid { get; private set; }
+        public int Age { get; private set; }
+        public string WestZodiak { get; private set; }
+        public string ChinaZodiak { get; private set; }
+
+        public BirthdayModel()
+        {
+            _birthday = DateTime.Today;
+        }
 
         public DateTime Birthday
         {
@@ -19,6 +27,9 @@ namespace SharpLab01
                 _birthday = value;
                 var today = DateTime.Today;
                 Valid = (today - value).Days >= 0 && (today.Year - value.Year) <= 135;
+                Age = 2;
+                WestZodiak = "Some west";
+                ChinaZodiak = "Some china";
             }
         }
 

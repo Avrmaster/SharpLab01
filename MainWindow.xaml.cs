@@ -21,18 +21,21 @@ namespace SharpLab01
     /// </summary>
     public partial class MainWindow : Window
     {
-        private BirthdayModel _birthdayModel;
+        private readonly BirthdayModel _birthdayModel;
 
         public MainWindow()
         {
             _birthdayModel = new BirthdayModel();
             InitializeComponent();
+            
         }
 
         private void OnCalendarChange(object sender, SelectionChangedEventArgs e)
         {
             _birthdayModel.Birthday = MainCalendar.SelectedDate ?? DateTime.Now;
-            TextBlockAge.Text = _birthdayModel.Valid.ToString();
+            TextBlockAge.Text = "Your age:\n"+_birthdayModel.Age.ToString();
+            TextBlockWestZodiak.Text = "Western zodiak:\n" + _birthdayModel.WestZodiak;
+            TextBlockChinaZodiak.Text = "China zodiak:\n" + _birthdayModel.ChinaZodiak;
         }
     }
 }
