@@ -1,25 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+//Unused usings
 
-namespace SharpLab01
+namespace LeskivSharp01
 {
-    class BirthdayModel
+    internal class BirthdayModel
     {
         private DateTime _birthday;
-        public bool Valid { get; private set; }
-        public string Age { get; private set; }
-        public string WestZodiac { get; private set; }
-        public string ChineseZodiac { get; private set; }
+        internal bool Valid { get; private set; }
+        internal string Age { get; private set; }
+        internal string WestZodiac { get; private set; }
+        internal string ChineseZodiac { get; private set; }
 
-        public BirthdayModel()
+        internal BirthdayModel()
         {
             _birthday = DateTime.Today;
         }
 
-        public DateTime Birthday
+        internal DateTime Birthday
         {
             get => _birthday;
             set
